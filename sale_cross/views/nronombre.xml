@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+        <record id="sale_cross_nronombre_tree" model="ir.ui.view">
+            <field name="name">sale_cross_nronombre.tree</field>
+            <field name="model">nro.nombre</field>
+            <field name="arch" type="xml">
+                <tree string="Registrar Nro y Nombre">
+                    <field name="cod"/>
+                    <field name="name"/>
+                    <field name="number"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sale_cross_nronombre_form" model="ir.ui.view">
+            <field name="name">sale_cross_nronombre.form</field>
+            <field name="model">nro.nombre</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="cod"/>
+                            <field name="name"/>
+                            <field name="number"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="actions_nronombre" model="ir.actions.act_window">
+            <field name="name">Alta de Nro y Nombre</field>
+            <field name="res_model">nro.nombre</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Registrar un nuevo nro y nombre
+                </p>
+            </field>
+        </record>
+        <!-- Top menu item -->
+        <menuitem name="Numero y Nombre" id="sale.sale_menu_root"/>
+        <!-- menu categories -->
+        <menuitem name="Alta de Nro y Nombre" id="nronombre_menu" parent="sale.sale_menu_root" action="actions_nronombre"/>
+    </data>
+</odoo>
